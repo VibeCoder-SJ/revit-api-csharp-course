@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>C# for Revit API Course</title>
+  styles.css
+</head>
+<body>
+  <div class="app">
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <div class="brand">
+        <h1>C# for Revit API</h1>
+        <p>Beginner BIM Automation Course</p>
+      </div>
+
+      <div class="progress-box">
+        <div class="progress-header">
+          <span>Progress</span>
+          <strong id="progressText">0%</strong>
+        </div>
+        <div class="progress-bar">
+          <div id="progressFill"></div>
+        </div>
+        <p id="completedText">0 of 0 lessons completed</p>
+      </div>
+
+      <button id="darkModeBtn" class="secondary-btn">🌙 Dark Mode</button>
+
+      <nav id="lessonList" class="lesson-list"></nav>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="content">
+      <section class="top-actions">
+        <button id="resetBtn" class="secondary-btn">Reset Progress</button>
+      </section>
+
+      <section class="lesson-card">
+        <div class="lesson-meta" id="lessonPhase"></div>
+        <h2 id="lessonTitle"></h2>
+        <p id="lessonSummary" class="summary"></p>
+
+        <hr />
+
+        <h3>Simple Explanation</h3>
+        <p id="lessonContent"></p>
+
+        <h3>Real-World Revit Example / Code</h3>
+        <pre><code id="lessonCode"></code></pre>
+
+        <button id="downloadCodeBtn" class="secondary-btn">Download Code Snippet</button>
+
+        <h3>Practice Task</h3>
+        <div class="practice-box">
+          <p id="lessonPractice"></p>
+        </div>
+
+        <h3>Common Beginner Mistakes</h3>
+        <ul id="lessonMistakes"></ul>
+
+        <div class="lesson-actions">
+          <button id="prevBtn" class="secondary-btn">Previous</button>
+          <button id="completeBtn" class="primary-btn">Mark Complete</button>
+          <button id="nextBtn" class="primary-btn">Next Lesson</button>
+        </div>
+      </section>
+
+      <section class="notes-card">
+        <h3>My Notes</h3>
+        <p class="small-text">Notes are saved automatically in your browser.</p>
+        <textarea id="notesArea" placeholder="Write your notes, doubts, Revit examples, or practice answers here..."></textarea>
+      </section>
+    </main>
+
+  </div>
+
+  script.jsscript>
+</body>
+</html>

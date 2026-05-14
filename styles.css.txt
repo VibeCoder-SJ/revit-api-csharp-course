@@ -1,0 +1,282 @@
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  --bg: #f4f6f8;
+  --card: #ffffff;
+  --text: #172033;
+  --muted: #667085;
+  --primary: #2563eb;
+  --primary-dark: #1d4ed8;
+  --border: #e5e7eb;
+  --code-bg: #111827;
+  --code-text: #e5e7eb;
+  --success: #16a34a;
+}
+
+body.dark {
+  --bg: #0f172a;
+  --card: #111827;
+  --text: #f8fafc;
+  --muted: #cbd5e1;
+  --border: #334155;
+  --code-bg: #020617;
+  --code-text: #f8fafc;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+}
+
+.app {
+  display: grid;
+  grid-template-columns: 320px 1fr;
+  min-height: 100vh;
+}
+
+.sidebar {
+  background: var(--card);
+  border-right: 1px solid var(--border);
+  padding: 20px;
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  overflow-y: auto;
+}
+
+.brand h1 {
+  margin: 0;
+  font-size: 24px;
+}
+
+.brand p {
+  margin-top: 6px;
+  color: var(--muted);
+  font-size: 14px;
+}
+
+.progress-box {
+  margin: 24px 0;
+  padding: 16px;
+  border: 1px solid var(--border);
+  border-radius: 16px;
+}
+
+.progress-header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.progress-bar {
+  height: 10px;
+  background: var(--border);
+  border-radius: 999px;
+  overflow: hidden;
+}
+
+#progressFill {
+  height: 100%;
+  width: 0%;
+  background: var(--primary);
+  transition: width 0.3s ease;
+}
+
+#completedText {
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.lesson-list {
+  margin-top: 20px;
+}
+
+.phase-title {
+  margin: 18px 0 8px;
+  font-size: 12px;
+  text-transform: uppercase;
+  color: var(--muted);
+  font-weight: bold;
+  letter-spacing: 0.06em;
+}
+
+.lesson-btn {
+  width: 100%;
+  text-align: left;
+  padding: 12px;
+  margin-bottom: 8px;
+  border: 1px solid var(--border);
+  background: transparent;
+  color: var(--text);
+  border-radius: 12px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.lesson-btn:hover {
+  background: rgba(37, 99, 235, 0.08);
+}
+
+.lesson-btn.active {
+  background: var(--primary);
+  color: white;
+  border-color: var(--primary);
+}
+
+.lesson-btn.completed::before {
+  content: "✓ ";
+  color: var(--success);
+  font-weight: bold;
+}
+
+.lesson-btn.active.completed::before {
+  color: white;
+}
+
+.content {
+  padding: 24px;
+  max-width: 1000px;
+  width: 100%;
+}
+
+.top-actions {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 16px;
+}
+
+.lesson-card,
+.notes-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  padding: 28px;
+  margin-bottom: 20px;
+}
+
+.lesson-meta {
+  color: var(--primary);
+  font-weight: bold;
+  font-size: 14px;
+  margin-bottom: 8px;
+}
+
+h2 {
+  font-size: 32px;
+  margin: 0 0 10px;
+}
+
+h3 {
+  margin-top: 28px;
+  margin-bottom: 10px;
+}
+
+.summary {
+  color: var(--muted);
+  font-size: 17px;
+}
+
+hr {
+  border: none;
+  border-top: 1px solid var(--border);
+  margin: 24px 0;
+}
+
+pre {
+  background: var(--code-bg);
+  color: var(--code-text);
+  padding: 18px;
+  border-radius: 14px;
+  overflow-x: auto;
+  line-height: 1.5;
+}
+
+.practice-box {
+  background: rgba(37, 99, 235, 0.08);
+  border-left: 4px solid var(--primary);
+  padding: 14px;
+  border-radius: 12px;
+}
+
+.lesson-actions {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  margin-top: 28px;
+  flex-wrap: wrap;
+}
+
+.primary-btn,
+.secondary-btn {
+  border: none;
+  border-radius: 12px;
+  padding: 11px 16px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.primary-btn {
+  background: var(--primary);
+  color: white;
+}
+
+.primary-btn:hover {
+  background: var(--primary-dark);
+}
+
+.secondary-btn {
+  background: transparent;
+  color: var(--text);
+  border: 1px solid var(--border);
+}
+
+.secondary-btn:hover {
+  background: rgba(100, 116, 139, 0.12);
+}
+
+button:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+textarea {
+  width: 100%;
+  min-height: 160px;
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 14px;
+  background: transparent;
+  color: var(--text);
+  font-size: 15px;
+  resize: vertical;
+}
+
+.small-text {
+  color: var(--muted);
+  font-size: 14px;
+}
+
+@media (max-width: 850px) {
+  .app {
+    grid-template-columns: 1fr;
+  }
+
+  .sidebar {
+    position: relative;
+    height: auto;
+    border-right: none;
+    border-bottom: 1px solid var(--border);
+  }
+
+  h2 {
+    font-size: 26px;
+  }
+
+  .content {
+    padding: 16px;
+  }
+}
